@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Results</title>
+</head>
+<body>
+    <h1>Parsed Expenses</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Account</th>
+            <th>Amount</th>
+            <th>Category</th>
+        </tr>
+        {% if expenses %}
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.date }}</td>
+                <td>{{ expense.account }}</td>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.category }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4">No expenses found.</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html>
